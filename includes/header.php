@@ -43,7 +43,7 @@
                     <div class="main__menu__wrap">
                         <nav class="main__menu__nav d-none d-lg-block">
                             <ul class="mainmenu">
-                                <li class="drop"><a href="../../ApplicationLayer/ManageLogin/index.php">Home</a></li>
+                                <li class="drop"><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
                                 <li class="drop"><a href="../../#">Order</a>
                                     <ul class="dropdown-content">
                                     <li><a href="../../ApplicationLayer/ProvideTrackingandAnalytic/orderlist.php">Order Delivery</a></li>
@@ -76,8 +76,8 @@
                                     echo '<li class="dropdown"><a>'.$_SESSION['username'].'</a>
                                     <ul>
                                     <div class="dropdown-content">
-                                    <a href="../../ApplicationLayer/ManageLogin/profile.php?'.$id.'='.$_SESSION['userid'].'">Profile</a>
-                                    <a href="../../ApplicationLayer/ManageLogin/login.php">Logout</a>
+                                    <a href="../../ApplicationLayer/ManageUser/profile.php?'.$id.'='.$_SESSION['userid'].'">Profile</a>
+                                    <a href="../../ApplicationLayer/ManageUser/login.php">Logout</a>
                                     </div>
                                     </ul>
                                     </li>';

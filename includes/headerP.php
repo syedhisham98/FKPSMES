@@ -14,7 +14,7 @@
                 </div>
                 
                             <ul>
-                                <li><a href="../../ApplicationLayer/ManageLogin/index.php">Home</a></li>
+                                <li><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
                                 <li class="dropdown"><a href="../../#">Analytic</a>
                                     <div class="dropdown-content">
                                     <a href="../../ApplicationLayer/ProvideTrackingandAnalytic/providerReport.php">Report Analytic</a>
@@ -39,8 +39,8 @@
                                     echo '<li class="dropdown"><a>'.$_SESSION['username'].'</a>
                                     <ul>
                                     <div class="dropdown-content">
-                                    <a href="../../ApplicationLayer/ManageLogin/profile.php?'.$id.'='.$_SESSION['userid'].'">Profile</a>
-                                    <a href="../../ApplicationLayer/ManageLogin/login.php">Logout</a>
+                                    <a href="../../ApplicationLayer/ManageUser/profile.php?'.$id.'='.$_SESSION['userid'].'">Profile</a>
+                                    <a href="../../ApplicationLayer/ManageUser/login.php">Logout</a>
                                     </div>
                                     </ul>
                                     </li>';
