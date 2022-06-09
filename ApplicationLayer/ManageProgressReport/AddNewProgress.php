@@ -2,7 +2,7 @@
 require_once '../../BusinessServiceLayer/Controller/ProgressReportController.php';
 
 session_start();
-$addProgress = new ProgressReportController();
+$stdProgress = new progressController();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -11,8 +11,8 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
-if(isset($_POST['addProgress'])){
-$addProgress->addProgress();
+if(isset($_POST['stdAddProgress'])){
+  $stdProgress->stdAddProgress();
 } 
 
 ?>
@@ -55,7 +55,7 @@ input {
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="bradcaump__inner text-center">
-              <h2 class="bradcaump-title">Add PSM Progress</h2>
+              <h2 class="bradcaump-title">Student Add Progress</h2>
               <nav class="bradcaump-inner">           
               </nav>
             </div>
@@ -65,24 +65,44 @@ input {
     </div>
 
     <center>
-      <form action="" method="POST" enctype="multipart/form-data">
-      <input type="text" name="student_name" placeholder="Student Name" required>
-    <br><br><br>
-    <input type="text" name="student_id" placeholder="Student ID" required>
-    <br><br><br>
-    <input type="text" name="project_title" placeholder="PSM Title" required>
-    <br><br><br>
-    <input type="text" name="progressDetails" placeholder="Progress Details" required>
-    <br><br><br>
-            <input type="submit" name="addProgress" value="Submit Progress">
-          
-    
+        <form action="" method="POST" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Student ID</td>
+                    <td><input type="text" name="stdID" required></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td><input type="text" name="title" required></td>
+                </tr>
+                <tr>
+                    <td>Detail</td>
+                    <td><input type="text" name="detail" required></td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    
+                </tr>
+                <tr>
+                    <td><input style="float: left;" type="button" onclick="window.location.href='lctSchedule.php';" value="Back" /></td>
+                    <td><input type="submit" name="stdAddProgress" value="Add Progress"></td>
+                </tr>
+            </table>
         <br>
         
       </form>
-  </center>
-
-
+</center>
 
 <?php
 include "../../includes/footer.php";
