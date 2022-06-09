@@ -96,7 +96,7 @@ input {
                 </tr>
                 <tr>
                     <td><input style="float: left;" type="button" onclick="window.location.href='lctSchedule.php';" value="Back" /></td>
-                    <td><input type="submit" name="stdAddSchedule" value="Add Schedule"></td>
+                    <td><input type="submit" name="lctAddSchedule" value="Add Schedule"></td>
                 </tr>
             </table>
         <br>

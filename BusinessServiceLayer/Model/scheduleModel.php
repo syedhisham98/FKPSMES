@@ -27,9 +27,9 @@ class scheduleModel{
         return DB::run($sql,$args);
     }
     
-    // function deleteStud(){
-    //     $sql = "delete from student where stud_ic=:stud_ic";
-    //     $args = [':stud_ic'=>$this->stud_ic];
+    // function deleteStd(){
+    //     $sql = "delete from stdSchedule where title=:title";
+    //     $args = [':title'=>$this->title];
     //     return DB::run($sql,$args);
     // }
 
@@ -40,6 +40,12 @@ class scheduleModel{
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
         return $count;
+    }
+
+    function lctViewSchedule(){
+        //To retrieve all profile information from lecturer table and send them to lecturerController class.
+        $sql = "select * from lctSchedule";
+        return DB::run($sql);
     }
 }
 ?>

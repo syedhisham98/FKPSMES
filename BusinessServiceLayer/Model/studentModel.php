@@ -5,7 +5,7 @@ class studentModel{
     public $student_id,$name,$email,$phone,$username,$password,$usertype,$ID,$tittle;
     
     function addStudent(){
-        $sql = "insert into student(student_name, student_email, student_phone,username, password, usertype, matric_id, project_tittle) values(:name, :email, :phone, :username, :password, :usertype, :ID, :tittle)";
+        $sql = "insert into student(student_name, student_email, student_phone,username, password, usertype, student_matric, student_project) values(:name, :email, :phone, :username, :password, :usertype, :ID, :tittle)";
         $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone,':username'=>$this->username, ':password'=>$this->password, ':usertype'=>$this->usertype, ':ID'=>$this->ID, ':tittle'=>$this->tittle];
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
