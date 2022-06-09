@@ -1,29 +1,29 @@
 <?php
-require_once '../../BusinessServiceLayer/controller/customerController.php';
-require_once '../../BusinessServiceLayer/controller/providerController.php';
-require_once '../../BusinessServiceLayer/controller/runnerController.php';
+require_once '../../BusinessServiceLayer/controller/studentController.php';
+require_once '../../BusinessServiceLayer/controller/lecturerController.php';
+require_once '../../BusinessServiceLayer/controller/secretariatController.php';
 session_start();
 $username = $_SESSION['username'];
 $usertype = $_SESSION['usertype'];
 
 if ($usertype == 1) {
-	$customer_id = $_GET['customer_id'];
-	$table_id = "customer_";
-	$customer = new customerController();
-	$data = $customer->viewCustomer($customer_id); 
+	$student_id = $_GET['student_id'];
+	$table_id = "student_";
+	$customer = new studentController();
+	$data = $customer->viewStudent($student_id); 
 	
 }
 else if ($usertype == 2) {
-	$sp_id = $_GET['sp_id'];
-	$table_id = "sp_";
-	$provider = new providerController();
-	$data = $provider->viewProvider($sp_id); 
+	$lecturer_id = $_GET['lecturer_id'];
+	$table_id = "lecturer_";
+	$provider = new lecturerController();
+	$data = $provider->viewlecturer($lecturer_id); 
 }
 else if ($usertype == 3) {
-	$runner_id = $_GET['runner_id'];
-	$table_id = "runner_";
-	$runner = new runnerController();
-	$data = $runner->viewRunner($runner_id); 
+	$secrectariat_id = $_GET['secrectariat_id'];
+	$table_id = "secrectariat_";
+	$runner = new secretariatController();
+	$data = $runner->viewSecretariat($secrectariat_id); 
 }
 
 
@@ -64,25 +64,17 @@ input {
       include "../../includes/header.php";
     }
     ?>
-</div>
-
-    	<h2 class="bradcaump-title">User Profile</h2>
-             
-            
-
-	</div>
-
 
 <section class="type__category__area bg--white section-padding--lg">
 	<div class="wrapper wrapper--w790">
 		<div class="profilecard card-5">
 			<div class="profilecard-heading">
 				<?php if ($usertype == 1) { ?>
-					<h2 class="title">Customer Profile</h2>
+					<h2 class="title">Student Profile</h2>
 				<?php } else if ($usertype == 2) { ?>
-					<h2 class="title">Provider Profile</h2>
+					<h2 class="title">Lecturer Profile</h2>
 				<?php } else if ($usertype == 3) { ?>
-					<h2 class="title">Runner Profile</h2>
+					<h2 class="title">Secretariat Profile</h2>
 				<?php } ?>
 					</div>
 					<div class="addcontainer">
@@ -121,46 +113,29 @@ input {
 								</div>
 						
 						</div>
+
 						<div class='row'>
 						<div class='col-25'>
-							<label for="name">Address</label>
-							</div>
-							<div class='value'>
+							<label for="name">Matric ID</label>
+							</div>							
+						
 								<div class='col-75'>
-									<?=$row[''.$table_id.'address']?>
+									<?=$row['matric_id']?>
 								</div>
-							</div>
-						</div>
+						
+						</div>	
+
 						<div class='row'>
 						<div class='col-25'>
-							<label for="name">City</label>
-							</div>
-							<div class='value'>
+							<label for="name">Project Tittle</label>
+							</div>							
+						
 								<div class='col-75'>
-									<?=$row[''.$table_id.'city']?>
+									<?=$row['project_tittle']?>
 								</div>
-							</div>
+						
 						</div>
-						<div class='row'>
-						<div class='col-25'>
-							<label for="name">State</label>
-							</div>
-							<div class='value'>
-								<div class='col-75'>
-									<?=$row[''.$table_id.'state']?>
-								</div>
-							</div>
-						</div>
-						<div class='row'>
-						<div class='col-25'>
-							<label for="name">Zipcode</label>
-							</div>
-							<div class='value'>
-								<div class='col-75'>
-									<?=$row[''.$table_id.'zipcode']?>
-								</div>
-							</div>
-						</div>
+
 						<div class='row'>
 						<div class='col-25'>
 							<label for="name">Username</label>
@@ -171,16 +146,7 @@ input {
 								</div>
 							</div>
 						</div>
-						<div class='row'>
-						<div class='col-25'>
-							<label for="name">Passowrd</label>
-							</div>
-							<div class='value'>
-								<div class='col-75'>
-									<?=$row['password']?>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</form>
