@@ -18,9 +18,9 @@ $usertype = $_SESSION['usertype'];
 		$provider_id = $_GET['provider_id'];
 		$table_id = "provider_";
 		$provider = new lecturerController();
-		$data = $provider->viewProvider($provider_id);
+		$data = $provider->viewlecturer($provider_id);
 		if(isset($_POST['update'])){
-			$provider->editProvider();
+			$provider->editlecturer();
 			$_SESSION['username']=$_POST['username'];
 		}
 	} else if ($usertype == 3) {
