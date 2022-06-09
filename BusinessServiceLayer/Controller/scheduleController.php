@@ -3,7 +3,7 @@ require_once '../../BusinessServiceLayer/model/scheduleModel.php';
 
 class scheduleController{
     
-    function stdAddSchdl(){
+    function stdAddSchedule(){
         $stdSchedule = new scheduleModel();
         $stdSchedule->title = $_POST['title'];
         $stdSchedule->content = $_POST['content'];
@@ -33,6 +33,19 @@ class scheduleController{
             $message = "Schedule Successfully Update!";
     echo "<script type='text/javascript'>alert('$message');
     window.location = '../../ApplicationLayer/ManageSchedule/stdAddSchedule.php?schedule_id=".$_POST['schedule_id']."';</script>";
+        }
+    }
+
+    function lctAddSchedule(){
+        $lctSchedule = new scheduleModel();
+        $lctSchedule->title = $_POST['title'];
+        $lctSchedule->content = $_POST['content'];
+        $lctSchedule->time = $_POST['time'];
+        $lctSchedule->date = $_POST['date'];
+        if($lctSchedule->lctAddSchedule() > 0){
+            $message = "Schedule Successfully Add!";
+		echo "<script type='text/javascript'>alert('$message');
+		window.location = '../../ApplicationLayer/ManageSchedule/lctAddSchedule.php';</script>";
         }
     }
     
