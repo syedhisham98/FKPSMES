@@ -61,13 +61,13 @@
               
                                 <?php 
                                 if ($_SESSION['usertype'] == 1) {
-                                    $id = "customer_id";
+                                    $id = "student_id";
                                 }
                                 else if ($_SESSION['usertype'] == 2) {
-                                    $id = "sp_id";
+                                    $id = "lecturer_id";
                                 }
                                 else if ($_SESSION['usertype'] == 3) {
-                                    $id = "runner_id";
+                                    $id = "secretariat_id";
                                 }
 
                                 if(isset($_SESSION['username']))
