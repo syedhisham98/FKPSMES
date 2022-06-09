@@ -13,15 +13,10 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
-if(isset($_POST['viewRubric'])){
-    $rubric->viewRubric();
-  
-}
-
-if(isset($_POST['deleteRubric'])){
-  $rubric->deleteRubric();
-}
-
+if(isset($_POST['editRubric'])){
+    $rubric->editRubric();
+    
+} 
 
 ?>
 
@@ -39,8 +34,8 @@ input {
   border-color: grey;
 }
 </style>
-
 <body>
+
 <!-- NAVBAR -->
 <div class="wrapper" id="wrapper">
     <?php 
@@ -58,12 +53,12 @@ input {
 
 <!-- CONTENT -->
 
-    <div class="ht__bradcaump__wrap d-flex align-items-center">
+    <div class="ht_bradcaump_wrap d-flex align-items-center">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="bradcaump__inner text-center">
-              <h2 class="bradcaump-title">PSM Rubric</h2>
+              <h2 class="bradcaump-title">Rubric</h2>
               <nav class="bradcaump-inner">           
               </nav>
             </div>
@@ -72,65 +67,27 @@ input {
       </div>
     </div>
 
-<table>
-<tr>
-<th colspan="4"></th>
-</tr>
-
-<tr>
-<th>
-<form method="post">
-<div class="">
-    <p><button type="submit" formaction="../ManageRubric/addRubric.php">Add Rubric</button></p>
-</div>
-</th>
-
-<tbody>
-<table>
-  <tr>
-    <th>Description</th>
-    <th>Mark</th>
-    <th>Weight</th>
-  </tr>
-</table>
-
-<table>
-    <?php 
-    $no = 1;
-    foreach($data as $row){
-    echo "<tr>"?>
-    <td align="center"><?=$no?></td>
-    <td align="center"><?=$row['rubricDesc']?></td>
-    <td align="center"><?=$row['rubricWeight']?></td>
-    <td align="center"><?=$row['rubricMark']?></td>
-    </td>
-
-    <td>
-      <form action='' method='POST'>
-      <input type="hidden" name="rubricID" value="<?=$row['rubricID']?>">
-      <td>
-      <input type="submit" name="delete" value="Delete">
-      <input type="button" onclick="window.location.href='editRubric.php';" value="Edit"/>
-    </td>
-    </form>
-
-    </td>
-    
-    <?php
-    "</tr>";
-    $no++;
-  }
-  ?>
+<center>
+<form action="" method="POST" enctype="multipart/form-data">
+  <table>
+  <input type="hidden" name="rubricID" value="<?=$row['rubricID']?>">
+      <td>Description</td>
+      <td><input type="text" name="rubricDesc"></td>
+    </tr>
+    <tr>
+      <td>Mark</td>
+      <td><input type="number" name="mark" value="<?=$row['rubricMark']?>" required>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td><input type="number" name="weight"></td>
+    </tr>
   </table>
-  </tbody>
-
-</div>
-</th>
-
-
-</tr>
-</table>
-
+  <br>
+  <input type="submit" name="editRubric" value="Edit Rubric">
+  <input type="button" onclick="window.location.href='rubricCoordinator.php';" value="Back" />
+</form>
+  </center>
 
 <?php
 include "../../includes/footer.php";
