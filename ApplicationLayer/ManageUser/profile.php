@@ -125,16 +125,21 @@ input {
 						
 						</div>	
 
-						<div class='row'>
+						<?php if ($usertype == 1){?>
+
+							<div class='row'>
 						<div class='col-25'>
-							<label for="name">Project Tittle</label>
+							<label for="name">Matric ID</label>
 							</div>							
 						
 								<div class='col-75'>
-									<?=$row['project_tittle']?>
+									<?=$row['matric_id']?>
 								</div>
 						
 						</div>
+						<?php}else if($usertype == 2){?>
+
+						}
 
 						<div class='row'>
 						<div class='col-25'>
@@ -151,6 +156,11 @@ input {
 				</div>
 			</form>
 		</center>
+
+		<center>
+      			<input type="button" onclick="window.location.href='stdAddSchedule.php';" value="Add Schedule" /> 
+	  			<input type="button" onclick="window.location.href='stdSchedule.php';" value="Update Schedule" />
+    	</center>
 	</section>
 	<?php
 }

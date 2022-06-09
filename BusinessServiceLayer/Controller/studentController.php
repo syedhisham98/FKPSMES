@@ -2,12 +2,9 @@
 require_once '../../BusinessServiceLayer/model/studentModel.php';
 
 class studentController{
-    // The controller that is responsible to handle the login, update profile and registration inputs of the student.
     
    function add(){
-    // create new oject 
         $student = new studentModel();
-         // set the attributes of student
         $student->name = $_POST['name'];
         $student->email = $_POST['email'];
         $student->phone = $_POST['phone'];
@@ -19,12 +16,10 @@ class studentController{
             $message = "Student Successfully Registered";
 		echo "<script type='text/javascript'>alert('$message');
 		window.location = '../../ApplicationLayer/ManageUser/login.php';</script>";
-        // send to studentModel
         }
     }
     
     function viewAll(){
-         // view all student
         $student = new studentModel();
         return $student->viewallStudent();
     }
