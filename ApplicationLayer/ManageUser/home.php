@@ -64,13 +64,36 @@ input {
 </tr>
 
 <tr>
+
 <th>
 <form method="post">
 <div class="homecard">
-  <img src="../../img/good.jpg" alt="Pet groom" width = "350" height="300" >
+  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
+    <div class="hotel">
+  </div>
 </div>
-    <p><button type="submit" formaction="../ManageGood/goodHome.php">Goods Services</button></p>
+<?php 
+    if ($_SESSION['usertype'] == 1){
+      ?>
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Rubric</button></p>
+      
+      <?php
+    }else if ($_SESSION['usertype'] == 2){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Rubric</button></p>
+
+      <?php
+    }else if($_SESSION['usertype'] == 3){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Rubric</button></p>
+
+  <?php
+    }
+  ?>
+
 </div>
 </th>
 

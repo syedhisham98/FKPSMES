@@ -17,7 +17,7 @@
             $row = mysqli_fetch_row($result);
             $_SESSION['message'] = "You are now logged in";
 			      $_SESSION['username'] = $username;
-            $_SESSION['usertype'] = $row[10];
+            $_SESSION['usertype'] = $row['usertype'];
             $_SESSION['userid'] = $row[0];
             
 			header("location: ../../ApplicationLayer/ManageUser/home.php"); 
@@ -48,6 +48,8 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
+          <div>
+          </div>
           <form method="post" action="login.php" class="sign-in-form">
             <h2 class="title">Sign in</h2>
 

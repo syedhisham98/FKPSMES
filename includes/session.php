@@ -9,15 +9,9 @@
 	{
 		$usertype=$_SESSION['usertype'];
 		
-		if($usertype=="admin")
+		if($usertype=="student")
 		{
-			$sql = "SELECT * FROM admin WHERE Username = '".$_SESSION['user']."'";
-			$query = $conn->query($sql);
-			$user = $query->fetch_assoc();
-		}
-		elseif ($usertype=="student")
-		{
-			$sql = "SELECT * FROM student WHERE username = '".$_SESSION['user']."'";
+			$sql = "SELECT * FROM student WHERE Username = '".$_SESSION['user']."'";
 			$query = $conn->query($sql);
 			$user = $query->fetch_assoc();
 		}

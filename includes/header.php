@@ -10,7 +10,7 @@
             <ul>
                             <?php
                                 if ($_SESSION['usertype'] == 1 || $_SESSION['usertype'] == 2) { ?>
-                                <li><a href="../../ApplicationLayer/ManageLogin/index.php">Home</a></li>
+                                <li><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
                                 <li class="dropdown"><a href="../../#">Menu</a>
                                    <div class="dropdown-content">
                                         <a href="../../ApplicationLayer/ManageFood/foodHome.php">Food Service</a>
