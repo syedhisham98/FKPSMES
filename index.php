@@ -1,3 +1,3 @@
 <?php
-header("Location:ApplicationLayer/ManageLogin");
+header("Location:ApplicationLayer/ManageUser");
 ?>
