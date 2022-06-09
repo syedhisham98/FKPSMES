@@ -2,7 +2,7 @@
 require_once '../../BusinessServiceLayer/Controller/scheduleController.php';
 
 session_start();
-$stdSchedule = new scheduleController();
+// $stdSchedule = new scheduleController();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -11,8 +11,8 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
-if(isset($_POST['addschdlStd'])){
-    $stdSchedule->stdAddSchdl();
+if(isset($_POST['stdAddSchedule'])){
+// $stdSchedule->stdAddSchedule();
 } 
 
 ?>
@@ -55,7 +55,7 @@ input {
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="bradcaump__inner text-center">
-              <h2 class="bradcaump-title">Student Add Schedule</h2>
+              <h2 class="bradcaump-title">Student Schedule</h2>
               <nav class="bradcaump-inner">           
               </nav>
             </div>
@@ -64,29 +64,10 @@ input {
       </div>
     </div>
 
-    <form method="post" action="" >
-        <h2 class="title">Add New Schedule</h2>
+    <center>
+      <input type="button" onclick="window.location.href='stdAddSchedule.php';" value="Add Schedule" /> <input type="button" onclick="window.location.href='stdSchedule.php';" value="Update Schedule" />
+    </center>
 
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Title" name="title" required/>
-            </div>
-
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="text" placeholder="Content" name="content" required/>
-            </div>
-
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="time" placeholder="Time" name="time" required/>
-              <input type="date" placeholder="Date" name="date" required/>
-            </div>
-
-            <div>
-                <input type="submit" value="Add Schedule" name="addschdlStd" class="btn solid" />
-            </div>
-    </form>
 
 <?php
 include "../../includes/footer.php";

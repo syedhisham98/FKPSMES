@@ -3,12 +3,12 @@ require_once '../../BusinessServiceLayer/libs/db.php';
 
 class scheduleModel{
     //To store and retrieve schedule.
-    public $scheduleID,$scheduleTitle,$scheduleContent,$scheduleTime,$scheduleDate;
+    //public $scheduleID,$scheduleTitle,$scheduleContent,$scheduleTime,$scheduleDate;
     
     function stdAddSchedule(){
         //To get all new schedule from lecturerController class and save in lecturer table
         $sql = "insert into stdSchedule(schedule_title, schedule_content,schedule_time, schedule_date) values(:title, :content, :time, :date)";
-        $args = [':title'=>$this->scheduleTitle, ':content'=>$this->scheduleContent, ':time'=>$this->scheduleTime, ':date'=>$this->scheduleDate];
+        $args = [':title'=>$this->title, ':content'=>$this->content, ':time'=>$this->time, ':date'=>$this->date];
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
         return $count;
@@ -32,5 +32,14 @@ class scheduleModel{
     //     $args = [':stud_ic'=>$this->stud_ic];
     //     return DB::run($sql,$args);
     // }
+
+    function lctAddSchedule(){
+        //To get all new schedule from lecturerController class and save in lecturer table
+        $sql = "insert into lctSchedule(schedule_title, schedule_content,schedule_time, schedule_date) values(:title, :content, :time, :date)";
+        $args = [':title'=>$this->title, ':content'=>$this->content, ':time'=>$this->time, ':date'=>$this->date];
+        $stmt = DB::run($sql, $args);
+        $count = $stmt->rowCount();
+        return $count;
+    }
 }
 ?>
