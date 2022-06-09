@@ -1,18 +1,51 @@
 <?php
 require_once '../../BusinessServiceLayer/model/ProgressReportModel.php';
 
-class ProgressReportController{
+class progressController{
     
-    function addProgress(){
-        $addProgress = new ProgressReportModel();
-        $addProgress->student_name = $_POST['student_name'];
-        $addProgress->student_id = $_POST['student_id'];
-        $addProgress->project_title = $_POST['project_title'];
-        $addProgress->progressDetails = $_POST['progressDetails'];
-        if($addProgress->addProgress() > 0){
-            $message = "New Progress Successfully Add!";
+    function stdAddProgress(){
+        $stdProgress = new progressModel();
+        $stdProgress->name = $_POST['name'];
+        $stdProgress->stdID = $_POST['stdID'];
+        $stdProgress->title = $_POST['title'];
+        $stdProgress->detail = $_POST['detail'];
+        if($stdProgress->stdAddProgress() > 0){
+            $message = "Schedule Successfully Add!";
 		echo "<script type='text/javascript'>alert('$message');
 		window.location = '../../ApplicationLayer/ManageProgressReport/AddNewProgress.php';</script>";
+        }
+    }
+    
+    function stdViewAll(){
+        $stdSchedule = new scheduleModel();
+        return $stdSchedule->stdViewSchedule();
+
+    }
+        
+    function stdEditSchdl(){
+        $stdSchedule = new scheduleModel();
+        $stdSchedule->scheduleID = $_POST['schedule_id'];
+        $stdSchedule->title = $_POST['title'];
+        $stdSchedule->content = $_POST['content'];
+        $stdSchedule->time = $_POST['time'];
+        $stdSchedule->date = $_POST['date'];
+        if($stdSchedule->stdEditSchedule()){
+            $message = "Schedule Successfully Update!";
+    echo "<script type='text/javascript'>alert('$message');
+    window.location = '../../ApplicationLayer/ManageSchedule/stdAddSchedule.php?schedule_id=".$_POST['schedule_id']."';</script>";
+        }
+    }
+
+    function lctAddSchedule(){
+        $lctSchedule = new scheduleModel();
+        $lctSchedule->title = $_POST['title'];
+        $lctSchedule->content = $_POST['content'];
+        $lctSchedule->time = $_POST['time'];
+        $lctSchedule->date = $_POST['date'];
+        if($lctSchedule->lctAddSchedule() > 0){
+            $message = "Schedule Successfully Add!";
+		echo "<script type='text/javascript'>alert('$message');
+		window.location = '../../ApplicationLayer/ManageSchedule/lctAddSchedule.php';</script>";
         }
     }
     
