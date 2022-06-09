@@ -3,7 +3,7 @@
 	include 'conect.php';
 
 	if(!isset($_SESSION['user']) || trim($_SESSION['user']) == ''){
-		header('location: ../../ApplicationLayer/ManageLogin/index.php');
+		header('location: ../../ApplicationLayer/ManageUser/index.php');
 	}
 	if(isset($_SESSION['userType']))
 	{
