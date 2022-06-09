@@ -2,7 +2,7 @@
 	session_start();
 	
 	require_once '../../BusinessServiceLayer/libs/db.php';
-	$db = mysqli_connect("localhost", "root", "", "rms");
+	$db = mysqli_connect("localhost", "root", "", "fkpsmes");
 
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db,$_POST['username']);
