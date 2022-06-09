@@ -7,9 +7,9 @@
 	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db,$_POST['username']);
 		$password = mysqli_real_escape_string($db,$_POST['password']);
-		$userType = mysqli_real_escape_string($db,$_POST['userType']);
+		$usertype = mysqli_real_escape_string($db,$_POST['usertype']);
 	
-		$sql = "SELECT * FROM $userType WHERE username='$username' AND password='$password'";
+		$sql = "SELECT * FROM $usertype WHERE username='$username' AND password='$password'";
 		$result = mysqli_query($db,$sql);
 		if (!$result)
            echo(mysqli_error($db));
@@ -17,7 +17,7 @@
             $row = mysqli_fetch_row($result);
             $_SESSION['message'] = "You are now logged in";
 			      $_SESSION['username'] = $username;
-            $_SESSION['usertype'] = $row['usertype'];
+            $_SESSION['usertype'] = $row[6];
             $_SESSION['userid'] = $row[0];
             
 			header("location: ../../ApplicationLayer/ManageUser/home.php"); 
@@ -48,8 +48,6 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <div>
-          </div>
           <form method="post" action="login.php" class="sign-in-form">
             <h2 class="title">Sign in</h2>
 
@@ -65,7 +63,7 @@
 
             <div> 
               <i class="fas fa-lock"></i>
-                <select name="userType" id="usertype" required>
+                <select name="usertype" id="usertype" required>
                   <option value="">Choose User Type</option>
                   <option Value="student">Student</option>
                   <option value="lecturer">lecturer</option>

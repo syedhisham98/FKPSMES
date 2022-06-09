@@ -8,11 +8,12 @@ class lecturerController{
         $lecturer->name = $_POST['name'];
         $lecturer->email = $_POST['email'];
         $lecturer->phone = $_POST['phone'];
+        $lecturer->ID = $_POST['ID'];
         $lecturer->username = $_POST['username'];
         $lecturer->password = $_POST['password'];
         $lecturer->usertype = $_POST['usertype'];
         if($lecturer->addlecturer() > 0){
-            $message = "lecturer Successfully Registered!";
+            $message = "Lecturer Successfully Registered!";
 		echo "<script type='text/javascript'>alert('$message');
 		window.location = '../../ApplicationLayer/ManageUser/login.php';</script>";
         }

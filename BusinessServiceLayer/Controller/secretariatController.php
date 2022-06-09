@@ -12,8 +12,8 @@ class secretariatController{
         $secretariat->username = $_POST['username'];
         $secretariat->password = $_POST['password'];
         $secretariat->usertype = $_POST['usertype'];
-        if($secretariat->addsecretariat() > 0){
-             $message = "secretariat Successfully Registered!";
+        if($secretariat->addSecretariat() > 0){
+             $message = "Secretariat Successfully Registered!";
 		echo "<script type='text/javascript'>alert('$message');
 		window.location = '../../ApplicationLayer/ManageUser/login.php';</script>";
         }
@@ -21,18 +21,18 @@ class secretariatController{
     
     function viewAll(){
         $secretariat = new secretariatModel();
-        return $secretariat->viewallsecretariat();
+        return $secretariat->viewallSecretariat();
     }
     
-     function viewsecretariat($sp_id){
+     function viewSecretariat($secretariat_id){
         $secretariat = new secretariatModel();
-        $secretariat->sp_id = $sp_id;
-        return $secretariat->viewsecretariat();
+        $secretariat->secretariat_id = $_SESSION['userid'];
+        return $secretariat->viewSecretariat();
     }
         
-    function editsecretariat(){
+    function editSecretariat(){
         $secretariat = new secretariatModel();
-        $secretariat->sp_id = $_POST['sp_id'];
+        $secretariat->secretariat_id = $_POST['secretariat_id'];
         $secretariat->name = $_POST['name'];
         $secretariat->email = $_POST['email'];
         $secretariat->phone = $_POST['phone'];

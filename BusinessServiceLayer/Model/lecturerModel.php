@@ -3,12 +3,12 @@ require_once '../../BusinessServiceLayer/libs/db.php';
 
 class lecturerModel{
     //To store and retrieve lecturer information.
-    public $lecturer_id,$name,$email,$phone,$username,$password;
+    public $lecturer_id,$name,$email,$phone,$username,$password,$usertype,$expertise,$ID;
     
     function addlecturer(){
         //To get all new lecturer information from lecturerController class and save in lecturer table
-        $sql = "insert into lecturer(lecturer_name, lecturer_email, lecturer_phone,username, password, usertype) values(:name, :email, :phone, :username, :password, :usertype)";
-        $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone, ':username'=>$this->username, ':password'=>$this->password, ':usertype'=>$this->usertype];
+        $sql = "insert into lecturer(lecturer_name, lecturer_email, lecturer_phone, username, password, usertype, staff_id, expertise) values(:name, :email, :phone, :username, :password, :expertise, :ID, :usertype)";
+        $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone, ':username'=>$this->username, ':password'=>$this->password, ':ID'=>$this->ID, ':expertise'=>$this->expertise,':usertype'=>$this->usertype];
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
         return $count;

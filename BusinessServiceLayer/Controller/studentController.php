@@ -16,7 +16,7 @@ class studentController{
         $student->password = $_POST['password'];
         $student->usertype = $_POST['usertype'];
         if($student->addStudent() > 0){
-            $message = "student Successfully Registered";
+            $message = "Student Successfully Registered";
 		echo "<script type='text/javascript'>alert('$message');
 		window.location = '../../ApplicationLayer/ManageUser/login.php';</script>";
         // send to studentModel
@@ -29,19 +29,13 @@ class studentController{
         return $student->viewallStudent();
     }
     
-  function viewstudent(){
+  function viewStudent(){
         $student = new studentModel();
         $student->student_id = $_SESSION['userid'];
-        return $student->viewstudent();
+        return $student->viewStudent();
     }
 
-  function viewstudentFullAddress(){
-        $student = new studentModel();
-        $student->student_id = $_SESSION['userid'];
-        return $student->viewstudentFullAddress();
-    }
-
-     function editstudent(){
+     function editStudent(){
         $student = new studentModel();
         $student->student_id = $_POST['student_id'];
         $student->name = $_POST['name'];
@@ -50,7 +44,7 @@ class studentController{
         $student->ID = $_POST['ID'];
         $student->tittle = $_POST['tittle'];
         $student->password = $_POST['password'];
-        if($student->modifystudent()){
+        if($student->modifyStudent()){
             $message = "Success Update!";
 		echo "<script type='text/javascript'>alert('$message');
     window.location = '../../ApplicationLayer/ManageUser/profile.php?student_id=".$_POST['student_id']."';</script>";

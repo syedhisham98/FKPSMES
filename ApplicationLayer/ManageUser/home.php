@@ -107,19 +107,19 @@ input {
 <?php 
     if ($_SESSION['usertype'] == 1){
       ?>
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Food Services</button></p>
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Progress and Report</button></p>
       
       <?php
     }else if ($_SESSION['usertype'] == 2){
       ?>
 
-      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Food Services</button></p>
+      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Progress and Report</button></p>
 
       <?php
     }else if($_SESSION['usertype'] == 3){
       ?>
 
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Food Services</button></p>
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Progress and Report</button></p>
 
   <?php
     }
@@ -130,25 +130,65 @@ input {
 
 <th>
 <div class="homecard">
-  <img src="../../img/medical.jpg" alt="Pet vet" width = "350" height="300">
+  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
-    <div class="vet">
-    </div>
+    <div class="hotel">
   </div>
-  <p><button type="submit" formaction="../ManageMedical/medicalHome.php">Medical Services</button></p>
+</div>
+<?php 
+    if ($_SESSION['usertype'] == 1){
+      ?>
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Schedule</button></p>
+      
+      <?php
+    }else if ($_SESSION['usertype'] == 2){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Schedule</button></p>
+
+      <?php
+    }else if($_SESSION['usertype'] == 3){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Schedule</button></p>
+
+  <?php
+    }
+  ?>
+
 </div>
 </th>
 
 <th>
 <div class="homecard">
-  <img src="../../img/vet.jpg" alt="Pet vet" width = "350" height="300">
+  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
-    <div class="vet">
-    </div>
+    <div class="hotel">
   </div>
-  <p><button type="submit" formaction="../ManagePetAssist/petAsistHome.php">Pet Assist Services</button></p>
 </div>
-</form>
+<?php 
+    if ($_SESSION['usertype'] == 1){
+      ?>
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Evaluation</button></p>
+      
+      <?php
+    }else if ($_SESSION['usertype'] == 2){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Evaluation</button></p>
+
+      <?php
+    }else if($_SESSION['usertype'] == 3){
+      ?>
+
+      <p><button type="submit" formaction="../ManageFood/foodHome.php">Evaluation</button></p>
+
+  <?php
+    }
+  ?>
+
+</div>
+  </form>
 </th>
 
 </tr>
