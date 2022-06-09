@@ -107,7 +107,7 @@ input {
 <?php 
     if ($_SESSION['usertype'] == 1){
       ?>
-      <p><button type="submit" formaction="../ManageProgressReport/AddNewProgress.php">Progress and Report</button></p>
+      <p><button type="submit" formaction="../ManageProgressReport/ViewProgress.php">Progress and Report</button></p>
       
       <?php
     }else if ($_SESSION['usertype'] == 2){
