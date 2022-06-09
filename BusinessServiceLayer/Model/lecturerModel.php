@@ -7,7 +7,7 @@ class lecturerModel{
     
     function addlecturer(){
         //To get all new lecturer information from lecturerController class and save in lecturer table
-        $sql = "insert into lecturer(lecturer_name, lecturer_email, lecturer_phone, username, password, usertype, staff_id, expertise) values(:name, :email, :phone, :username, :password, :expertise, :ID, :usertype)";
+        $sql = "insert into lecturer(lecturer_name, lecturer_email, lecturer_phone, username, password, usertype, lecturer_matric, lecturer_expertise) values(:name, :email, :phone, :username, :password, :expertise, :ID, :usertype)";
         $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone, ':username'=>$this->username, ':password'=>$this->password, ':ID'=>$this->ID, ':expertise'=>$this->expertise,':usertype'=>$this->usertype];
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
