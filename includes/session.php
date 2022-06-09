@@ -5,31 +5,31 @@
 	if(!isset($_SESSION['user']) || trim($_SESSION['user']) == ''){
 		header('location: ../../ApplicationLayer/ManageUser/index.php');
 	}
-	if(isset($_SESSION['userType']))
+	if(isset($_SESSION['usertype']))
 	{
-		$userType=$_SESSION['userType'];
+		$usertype=$_SESSION['usertype'];
 		
-		if($userType=="admin")
+		if($usertype=="admin")
 		{
 			$sql = "SELECT * FROM admin WHERE Username = '".$_SESSION['user']."'";
 			$query = $conn->query($sql);
 			$user = $query->fetch_assoc();
 		}
-		elseif ($userType=="customer")
+		elseif ($usertype=="student")
 		{
-			$sql = "SELECT * FROM customer WHERE Username = '".$_SESSION['user']."'";
+			$sql = "SELECT * FROM student WHERE username = '".$_SESSION['user']."'";
 			$query = $conn->query($sql);
 			$user = $query->fetch_assoc();
 		}
-		elseif ($userType=="serviceprovider")
+		elseif ($usertype=="lecturer")
 		{
-			$sql = "SELECT * FROM serviceprovider WHERE Username = '".$_SESSION['user']."'";
+			$sql = "SELECT * FROM lecturer WHERE username = '".$_SESSION['user']."'";
 			$query = $conn->query($sql);
 			$user = $query->fetch_assoc();
 		}
-		elseif ($userType=="runner")
+		elseif ($usertype=="secretariat")
 		{
-			$sql = "SELECT * FROM runner WHERE Username = '".$_SESSION['user']."'";
+			$sql = "SELECT * FROM secretariat WHERE username = '".$_SESSION['user']."'";
 			$query = $conn->query($sql);
 			$user = $query->fetch_assoc();
 		}
