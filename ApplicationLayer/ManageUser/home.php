@@ -138,19 +138,19 @@ input {
 <?php 
     if ($_SESSION['usertype'] == 1){
       ?>
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Schedule</button></p>
+      <p><button type="submit" formaction="../ManageSchedule/stdSchedule.php">Schedule</button></p>
       
       <?php
     }else if ($_SESSION['usertype'] == 2){
       ?>
 
-      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Schedule</button></p>
+      <p><button type="submit" formaction="../ManageSchedule/lctSchedule.php">Schedule</button></p>
 
       <?php
     }else if($_SESSION['usertype'] == 3){
       ?>
 
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Schedule</button></p>
+      <p><button type="submit" formaction="../ManageSchedule/fkSchedule.php">Schedule</button></p>
 
   <?php
     }
