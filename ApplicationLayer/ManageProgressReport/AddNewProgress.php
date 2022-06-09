@@ -95,7 +95,7 @@ input {
                     
                 </tr>
                 <tr>
-                    <td><input style="float: left;" type="button" onclick="window.location.href='ManageUser/home.php';" value="Back" /></td>
+                    <td><input style="float: left;" type="button" onclick="window.location.href='ViewProgress.php';" value="Back" /></td>
                     <td><input type="submit" name="stdAddProgress" value="Add Progress"></td>
                 </tr>
             </table>
