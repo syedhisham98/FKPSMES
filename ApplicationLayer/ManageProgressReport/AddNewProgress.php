@@ -66,9 +66,9 @@ input {
 
     <center>
         <form action="" method="POST" enctype="multipart/form-data">
-            <table>
+            <table style="width:50%">
                 <tr>
-                    <td>Name</td>
+                    <td>Student Name</td>
                     <td><input type="text" name="name" required></td>
                 </tr>
                 <tr>
@@ -76,11 +76,11 @@ input {
                     <td><input type="text" name="stdID" required></td>
                 </tr>
                 <tr>
-                    <td>Title</td>
+                    <td>PSM Title</td>
                     <td><input type="text" name="title" required></td>
                 </tr>
                 <tr>
-                    <td>Detail</td>
+                    <td>Progress</td>
                     <td><input type="text" name="detail" required></td>
                 </tr>
                 <tr>
@@ -95,7 +95,7 @@ input {
                     
                 </tr>
                 <tr>
-                    <td><input style="float: left;" type="button" onclick="window.location.href='ViewProgress.php';" value="Back" /></td>
+                    <td><input type="button" onclick="window.location.href='ViewProgress.php';" value="Back" /></td>
                     <td><input type="submit" name="stdAddProgress" value="Add Progress"></td>
                 </tr>
             </table>

@@ -1,8 +1,9 @@
 <?php
-// require_once '../../BusinessServiceLayer/Controller/scheduleController.php';
+require_once '../../BusinessServiceLayer/Controller/ProgressReportController.php';
 
 session_start();
-// $stdSchedule = new scheduleController();
+$stdProgress = new progressController();
+$data = $stdProgress->stdViewProgress();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -11,9 +12,10 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
-if(isset($_POST['stdAddSchedule'])){
-// $stdSchedule->stdAddSchedule();
-} 
+if(isset($_POST['stdViewProgress'])){
+  $stdProgress->stdViewProgress();
+
+}
 
 ?>
 
@@ -55,7 +57,7 @@ input {
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="bradcaump__inner text-center">
-              <h2 class="bradcaump-title">Progress</h2>
+              <h2 class="bradcaump-title">Student Schedule</h2>
               <nav class="bradcaump-inner">           
               </nav>
             </div>
@@ -65,8 +67,60 @@ input {
     </div>
 
     <center>
-        <input type="button" onclick="window.location.href='AddNewProgress.php';" value="Add Progress" />
+      <tbody>
+
+      <table style="width:80%">
+            <tr>
+            <th>No</th>
+            <th></th>
+            <th>Student Name</th>
+            <th></th>
+            <th>Student ID</th>
+            <th></th>
+            <th>PSM Title</th>
+            <th></th>
+            <th>Progress</th>
+            <th></th>
+            </tr>
+            </table>
+
+        <table style="width:80%">
+            <?php 
+            $no = 1;
+            foreach($data as $row){
+            echo "<tr>"?>
+        
+            <tr>
+            <td><?=$no?></td>
+            <td></td>
+            <td><?=$row['student_name']?></td>
+            <td></td>
+            <td><?=$row['student_id']?></td>
+            <td></td>
+            <td><?=$row['project_title']?></td>
+            <td></td>
+            <td><?=$row['progressDetails']?></td>
+            <td></td>
+            <td>
+
+            </td>
+            </tr>
+            
+            </form>
+
+            </td>
+            
+            <?php
+            "</tr>";
+            $no++;
+          }
+          ?>
+        </table>
+    </tbody>
+    <br>
+      <input type="button" onclick="window.location.href='AddNewProgress.php';" value="Add New Progress" /> 
     </center>
+
 
 <?php
 include "../../includes/footer.php";
