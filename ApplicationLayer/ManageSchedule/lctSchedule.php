@@ -2,7 +2,8 @@
 require_once '../../BusinessServiceLayer/Controller/scheduleController.php';
 
 session_start();
-// $stdSchedule = new scheduleController();
+$lctSchedule = new scheduleController();
+$data = $lctSchedule->lctViewAll();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -11,9 +12,10 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
-if(isset($_POST['stdAddSchedule'])){
-// $stdSchedule->stdAddSchedule();
-} 
+if(isset($_POST['lctViewAll'])){
+  $lctSchedule->lctViewAll();
+
+}
 
 ?>
 
@@ -65,7 +67,58 @@ input {
     </div>
 
     <center>
-        <input type="button" onclick="window.location.href='lctAddSchedule.php';" value="Add Schedule" /> <input type="button" onclick="window.location.href='lctSchedule.php';" value="Update Schedule" />
+      <tbody>
+        <table>
+            <?php 
+            $no = 1;
+            foreach($data as $row){
+            echo "<tr>"?>
+            <tr>
+            <th>No</th>
+            <th></th>
+            <th>Title</th>
+            <th></th>
+            <th>Content</th>
+            <th></th>
+            <th>Time</th>
+            <th></th>
+            <th>Date</th>
+            <th></th>
+            </tr>
+            <tr>
+            <td><?=$no?></td>
+            <td></td>
+            <td><?=$row['schedule_title']?></td>
+            <td></td>
+            <td><?=$row['schedule_content']?></td>
+            <td></td>
+            <td><?=$row['schedule_time']?></td>
+            <td></td>
+            <td><?=$row['schedule_date']?></td>
+            <td></td>
+            <td>
+            <form action='' method='POST'>
+              <td>
+              <input type="submit" name="delete" value="Delete">
+              <input type="submit" name="update" value="Update" href>    
+            </td>
+            </form>    
+            </td>
+            </tr>
+            
+            </form>
+
+            </td>
+            
+            <?php
+            "</tr>";
+            $no++;
+          }
+          ?>
+        </table>
+    </tbody>
+    <br>
+        <input type="button" onclick="window.location.href='lctAddSchedule.php';" value="Add Schedule" /> 
     </center>
 
 <?php

@@ -20,14 +20,25 @@ class rubricController{
        return $rubric->viewRubric();
    }
 
-   function deleteRubric(){
+    function deleteRubric(){
     $rubric = new rubricModel();
-    $rubric->rubric_id = $_POST['rubric_id'];
-    if($rubric->deleteRubric()){
-         $message = "Successfully Deleted!";
+    $rubric->rubricID = $_POST['rubricID'];
+    $rubrick->deleteRubric();
+    $message = "Product Deleted!";
     echo "<script type='text/javascript'>alert('$message');
-    window.location = '../../ApplicationLayer/ManageRubric/rubricCoordinator.php?rubric_id=".$_POST['rubric_id']."';</script>";
+    window.location = '../../ApplicationLayer/ManageRubric/rubricCoordinator.php';</script>";
     }
-}
+
+    function editRubric(){
+        $rubric = new rubricModel();
+        $rubric->rubricDesc = $_POST['rubricDesc'];
+        $rubric->mark = $_POST['mark'];
+        $rubric->weight = $_POST['weight'];
+        if($rubric -> editRubric()){
+            $message = "Rubric Edited!";
+            echo "<script type='text/javascript'>alert('$message');
+            window.location = '../../ApplicationLayer/ManageRubric/rubricCoordinator.php';</script>";
+            }  
+    }
 }
 

@@ -12,7 +12,7 @@ class scheduleController{
         if($stdSchedule->stdAddSchedule() > 0){
             $message = "Schedule Successfully Add!";
 		echo "<script type='text/javascript'>alert('$message');
-		window.location = '../../ApplicationLayer/ManageSchedule/stdAddSchedule.php';</script>";
+		window.location = '../../ApplicationLayer/ManageSchedule/stdSchedule.php';</script>";
         }
     }
     
@@ -45,10 +45,15 @@ class scheduleController{
         if($lctSchedule->lctAddSchedule() > 0){
             $message = "Schedule Successfully Add!";
 		echo "<script type='text/javascript'>alert('$message');
-		window.location = '../../ApplicationLayer/ManageSchedule/lctAddSchedule.php';</script>";
+		window.location = '../../ApplicationLayer/ManageSchedule/lctSchedule.php';</script>";
         }
     }
-    
+
+    function lctViewAll(){
+        $lctSchedule = new scheduleModel();
+        return $lctSchedule->lctViewSchedule();
+
+    }
     
 }
 ?>

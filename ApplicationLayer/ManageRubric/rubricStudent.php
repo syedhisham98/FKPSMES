@@ -67,7 +67,6 @@ input {
 <th>
 <form method="post">
 <div class="">
-    <p><button type="submit" formaction="../ManageRubric/addRubric.php">Add Rubric</button></p>
 </div>
 </th>
 
@@ -78,28 +77,6 @@ input {
     <th>Weight</th>
   </tr>
 </table>
-
-
-<?php 
-    if ($_SESSION['usertype'] == 1){
-      ?>
-      <p><button type="submit" formaction="../ManageRubric/rubricCoordinator.php">Food Services</button></p>
-      
-      <?php
-    }else if ($_SESSION['usertype'] == 2){
-      ?>
-
-      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Food Services</button></p>
-
-      <?php
-    }else if($_SESSION['usertype'] == 3){
-      ?>
-
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Food Services</button></p>
-
-  <?php
-    }
-  ?>
 
 </div>
 </th>

@@ -18,13 +18,15 @@ class rubricModel{
     }
 
     function deleteRubric(){
-            $sql = "delete from rubric where rubric_id=:rubric_id";
-            $args = [':rubric_id'=>$this->rubric_id];
+            $sql = "delete from rubric where rubricID=:rubricID";
+            $args = [':rubricID'=>$this->rubricID];
             return DB::run($sql,$args);
     }
 
-    function modifyRubric(){
-
+    function editRubric(){
+    	$sql = "update rubric set rubricWeight=:rubricWeight, rubricMark=:rubricMark, rubricDesc=:rubricDesc where rubricID=:rubricID";
+    	$args = [':weight'=>$this->weight, ':mark'=>$this->mark, ':rubricDesc'=>$this->rubricDesc, ':rubricID'=>$this->rubricID];
+    	return DB::run($sql,$args);
     }
 }
 ?>

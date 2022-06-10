@@ -4,6 +4,7 @@ require_once '../../BusinessServiceLayer/Controller/rubricController.php';
 session_start();
 
 $rubric = new rubricController();
+$data = $rubric->viewRubric();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -13,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 if(isset($_POST['addRubric'])){
-    $rubric->addRubric();
+    //$rubric->addRubric();
     
 } 
 
