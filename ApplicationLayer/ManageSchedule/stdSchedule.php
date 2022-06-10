@@ -74,11 +74,7 @@ input {
       <tbody>
 
         <table>
-            <?php 
-            $no = 1;
-            foreach($data as $row){
-            echo "<tr>"?>
-            <tr>
+        <tr>
             <th>No</th>
             <th></th>
             <th>Title</th>
@@ -90,6 +86,11 @@ input {
             <th>Date</th>
             <th></th>
             </tr>
+            <?php 
+            $no = 1;
+            foreach($data as $row){
+            echo "<tr>"?>
+
             <tr>
             <td><?=$no?></td>
             <td></td>
