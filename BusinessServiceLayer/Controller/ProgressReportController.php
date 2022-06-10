@@ -12,7 +12,7 @@ class progressController{
         if($stdProgress->stdAddProgress() > 0){
             $message = "Your Progress Successfully Submit!";
 		echo "<script type='text/javascript'>alert('$message');
-		window.location = '../../ApplicationLayer/ManageProgressReport/AddNewProgress.php';</script>";
+		window.location = '../../ApplicationLayer/ManageUser/home.php';</script>";
         }
     }
     
