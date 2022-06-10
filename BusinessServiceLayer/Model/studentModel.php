@@ -28,8 +28,6 @@ class studentModel{
         $sql = "update student set student_name=:name,student_email=:email,student_phone=:phone,username=:username,password=:password, project_tittle=:tittle ,matric_id=:ID where student_id=:student_id";
         $args = [':student_id'=>$this->student_id,':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone,  ':username'=>$this->username,':password'=>$this->password,':ID'=>$this->ID,':tittle'=>$this->tittle];
         return DB::run($sql,$args);
-    }
-    
-    
+    }    
 }
 ?>

@@ -70,12 +70,12 @@ li a:hover {
 
 .homecard{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 360px;
   margin-left: 80px;
   margin-top: 50px;
   text-align: center;
   font-family: arial;
-  height: 200px;
+  height: 350px;
     
 }
 

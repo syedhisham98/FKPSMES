@@ -18,10 +18,10 @@ if(isset($_POST['register'])){
         if ($usertype == 1) {
             $student->add();
         }
-         else if ($usertype == 2) {
+        else if ($usertype == 2) {
             $lecturer->add();
         }
-         else if ($usertype == 3) {
+        else if ($usertype == 3) {
             $secretariat->add();
         }
     }else {
@@ -89,7 +89,8 @@ if(isset($_POST['register'])){
             
             <div> 
               <i class="fas fa-lock"></i>
-                <select class="input-field" name="usertype" id="usertype" required>
+                <select name="usertype" id="usertype" required>
+                  <option value="">Choose User Type</option>
                   <option Value="1">Student</option>
                   <option value="2">Lecturer</option>
                   <option value="3">Secretariat</option>

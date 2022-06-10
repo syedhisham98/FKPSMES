@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
 <html class="no-js" lang="zxx">
 <head>
 <link rel="icon" href="../../img/RMS.png"/>
-<title>Runner Management System</title>
+<title>FK PSM Evaluation System Register</title>
 <?php include"../../includes/head.php";?>
 </head>
 <style>

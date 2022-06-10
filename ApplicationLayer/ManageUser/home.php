@@ -68,7 +68,7 @@ input {
 <th>
 <form method="post">
 <div class="homecard">
-  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
+  <img src="../../img/rubric.png" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
     <div class="hotel">
   </div>
@@ -99,7 +99,7 @@ input {
 
 <th>
 <div class="homecard">
-  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
+  <img src="../../img/report.png" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
     <div class="hotel">
   </div>
@@ -130,7 +130,7 @@ input {
 
 <th>
 <div class="homecard">
-  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
+  <img src="../../img/schedule.png" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
     <div class="hotel">
   </div>
@@ -161,7 +161,7 @@ input {
 
 <th>
 <div class="homecard">
-  <img src="../../img/food.jpg" alt="Pet hotel" width = "350" height="300">
+  <img src="../../img/evaluation.png" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
     <div class="hotel">
   </div>

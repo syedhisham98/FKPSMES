@@ -63,10 +63,11 @@
 
             <div> 
               <i class="fas fa-lock"></i>
-                <select class="input-field" name="usertype" id="usertype" required>
-                  <option Value="1">Student</option>
-                  <option value="2">lecturer</option>
-                  <option value="3">Secretariat</option>
+                <select name="usertype" id="usertype" required>
+                  <option value="">Choose User Type</option>
+                  <option Value="student">Student</option>
+                  <option value="lecturer">lecturer</option>
+                  <option value="secretariat">Secretariat</option>
                 </select>
             </div>
             
