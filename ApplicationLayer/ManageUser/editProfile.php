@@ -81,7 +81,7 @@ input {
 					<h2 class="title">Secretariat Profile</h2>
 				<?php } ?>
 			</div>
-			<div class="card-body">
+			<div class="addcontainer">
 				<form action="" method="POST">
 					<?php
 					foreach($data as $row){
@@ -110,8 +110,22 @@ input {
 								</div>
 							</div>
 						</div>
-						
-						
+						<div class='form-row'>
+							<div class='name'>Matric ID.: </div>
+							<div class='value'>
+								<div class='input-group'>
+									<input type="text" name="phone" value="<?=$row[''.$table_id.'matric']?>" >
+								</div>
+							</div>
+						</div>	
+						<div class='form-row'>
+							<div class='name'>Project Tittle: </div>
+							<div class='value'>
+								<div class='input-group'>
+									<input type="text" name="phone" value="<?=$row[''.$table_id.'project']?>" >
+								</div>
+							</div>
+						</div>					
 												
 						<div class='form-row'>
 							<div class='name'>Username: </div>

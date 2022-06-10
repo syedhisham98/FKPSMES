@@ -9,21 +9,21 @@ $usertype = $_SESSION['usertype'];
 if ($usertype == 1) {
 	$student_id = $_GET['student_id'];
 	$table_id = "student_";
-	$customer = new studentController();
-	$data = $customer->viewStudent($student_id); 
+	$student = new studentController();
+	$data = $student->viewStudent($student_id); 
 	
 }
 else if ($usertype == 2) {
 	$lecturer_id = $_GET['lecturer_id'];
 	$table_id = "lecturer_";
-	$provider = new lecturerController();
-	$data = $provider->viewlecturer($lecturer_id); 
+	$lecturer = new lecturerController();
+	$data = $lecturer->viewLecturer($lecturer_id); 
 }
 else if ($usertype == 3) {
 	$secrectariat_id = $_GET['secrectariat_id'];
 	$table_id = "secrectariat_";
-	$runner = new secretariatController();
-	$data = $runner->viewSecretariat($secrectariat_id); 
+	$secrectariat = new secretariatController();
+	$data = $secrectariat->viewSecretariat($secrectariat_id); 
 }
 
 
