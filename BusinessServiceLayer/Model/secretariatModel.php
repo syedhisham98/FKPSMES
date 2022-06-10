@@ -5,8 +5,8 @@ class secretariatModel{
     public $secretariat_id,$name,$email,$phone,$username,$usertype,$password,$ID,$role;
    
     function addSecretariat(){
-        $sql = "insert into secretariat(secretariat_name, secretariat_email, secretariat_phone, username, password, secretariat_matric, secretariat_role, usertype) values(:name, :email, :phone, :username, :password, :ID, :usertype, :role)";
-        $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone, ':username'=>$this->username, ':password'=>$this->password, ':ID'=>$this->ID,':usertype'=>$this->usertype, ':role'=>$this->role];
+        $sql = "insert into secretariat(secretariat_name, secretariat_email, secretariat_phone, username, password, secretariat_matric,usertype) values(:name, :email, :phone, :username, :password, :ID, :usertype)";
+        $args = [':name'=>$this->name, ':email'=>$this->email, ':phone'=>$this->phone, ':username'=>$this->username, ':password'=>$this->password, ':ID'=>$this->ID,':usertype'=>$this->usertype ];
         $stmt = DB::run($sql, $args);
         $count = $stmt->rowCount();
         return $count;

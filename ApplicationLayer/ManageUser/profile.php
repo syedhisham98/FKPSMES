@@ -116,16 +116,16 @@ input {
 
 						<div class='row'>
 						<div class='col-25'>
-							<label for="name">Matric ID</label>
+							<label for="name">Lecturer Expertise</label>
 							</div>							
 						
 								<div class='col-75'>
-									<?=$row['matric_id']?>
+									<?=$row[''.$table_id.'expertise']?>
 								</div>
 						
 						</div>	
 
-						<?php if ($usertype == 1){?>
+						
 
 							<div class='row'>
 						<div class='col-25'>
@@ -133,13 +133,11 @@ input {
 							</div>							
 						
 								<div class='col-75'>
-									<?=$row['matric_id']?>
+									<?=$row[''.$table_id.'matric']?>
 								</div>
 						
 						</div>
-						<?php}else if($usertype == 2){?>
-
-						}
+						
 
 						<div class='row'>
 						<div class='col-25'>
@@ -154,13 +152,13 @@ input {
 						
 					</div>
 				</div>
+      			<input type="button" onclick="window.location.href='stdAddSchedule.php';" value="Add Schedule" /> 
+	  			<input type="button" onclick="window.location.href='stdSchedule.php';" value="Update Schedule" />
+  
 			</form>
 		</center>
 
-		<center>
-      			<input type="button" onclick="window.location.href='stdAddSchedule.php';" value="Add Schedule" /> 
-	  			<input type="button" onclick="window.location.href='stdSchedule.php';" value="Update Schedule" />
-    	</center>
+		
 	</section>
 	<?php
 }
