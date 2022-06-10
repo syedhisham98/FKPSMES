@@ -108,13 +108,13 @@ input {
     if ($_SESSION['usertype'] == 1){
       ?>
       <p><button type="submit" formaction="../ManageProgressReport/ViewProgress.php">Progress</button></p>
-      <p><button type="submit" formaction="../ManageProgressReport/ViewReport.php">Report</button></p>
+      
       
       <?php
     }else if ($_SESSION['usertype'] == 3){
       ?>
 
-      <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Progress and Report</button></p>
+      <p><button type="submit" formaction="../ManageProgressReport/ViewReport.php">Report</button></p>
 
       <?php
     }?>

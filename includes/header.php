@@ -47,7 +47,14 @@
                                 <li class="drop"><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
                                     </ul>
                                 </li>                                    
-                                
+                                <li class="dropdown"><a href="../../#">Menu</a>
+                                   <div class="dropdown-content">
+                                        <a href="../../ApplicationLayer/ManageRubric/foodHome.php">Rubric</a>
+                                        <a href="../../ApplicationLayer/ManageProgressReport/goodHome.php">Progress and Report</a>
+                                        <a href="../../ApplicationLayer/ManageSchedule/medicalHome.php">Schedule</a>
+                                        <a href="../../ApplicationLayer/ManageEvaluation/petAsistHome.php">Evaluation</a>
+                                    </div>
+                                </li>
                         </nav>
 
                     </div>
@@ -84,12 +91,7 @@
             </ul>
                    
                 
-                <div class="shopping__cart">
-                    <?php
-                     if ($_SESSION['usertype'] == 1) {
-                   echo '<a href="../../ApplicationLayer/ManagePayment/payment.php?'.$id.'='.$_SESSION['userid'].'"><i class="zmdi zmdi-shopping-basket"></i></a>'; 
-               } ?>
-                </div>
+                
 
 
 
