@@ -31,6 +31,7 @@ class rubricController{
 
     function editRubric(){
         $rubric = new rubricModel();
+        $rubric->rubricID = $_POST['rubricID'];
         $rubric->rubricDesc = $_POST['rubricDesc'];
         $rubric->mark = $_POST['mark'];
         $rubric->weight = $_POST['weight'];

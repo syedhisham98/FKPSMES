@@ -57,7 +57,7 @@ input {
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="bradcaump__inner text-center">
-              <h2 class="bradcaump-title">Student Schedule</h2>
+              <h2 class="bradcaump-title">PSM Progress Report</h2>
               <nav class="bradcaump-inner">           
               </nav>
             </div>
@@ -69,11 +69,7 @@ input {
     <center>
       <tbody>
 
-        <table>
-            <?php 
-            $no = 1;
-            foreach($data as $row){
-            echo "<tr>"?>
+      <table style="width:80%">
             <tr>
             <th>No</th>
             <th></th>
@@ -86,6 +82,14 @@ input {
             <th>Progress</th>
             <th></th>
             </tr>
+            </table>
+
+        <table style="width:80%">
+            <?php 
+            $no = 1;
+            foreach($data as $row){
+            echo "<tr>"?>
+        
             <tr>
             <td><?=$no?></td>
             <td></td>
@@ -98,11 +102,7 @@ input {
             <td><?=$row['progressDetails']?></td>
             <td></td>
             <td>
-            <form action='' method='POST'>
-              <td>
-              <input type="submit" name="update" value="Update" href>    
-            </td>
-            </form>    
+
             </td>
             </tr>
             
