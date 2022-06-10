@@ -15,9 +15,12 @@
                 
                             <ul>
                                 <li><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
-                                <li class="dropdown"><a href="../../#">Analytic</a>
-                                    <div class="dropdown-content">
-                                    <a href="../../ApplicationLayer/ProvideTrackingandAnalytic/providerReport.php">Report Analytic</a>
+                                <li class="dropdown"><a href="../../#">Menu</a>
+                                   <div class="dropdown-content">
+                                        <a href="../../ApplicationLayer/ManageRubric/foodHome.php">Rubric</a>
+                                        <a href="../../ApplicationLayer/ManageProgressReport/goodHome.php">Progress and Report</a>
+                                        <a href="../../ApplicationLayer/ManageSchedule/medicalHome.php">Schedule</a>
+                                        <a href="../../ApplicationLayer/ManageEvaluation/petAsistHome.php">Evaluation</a>
                                     </div>
                                 </li>
                                     
