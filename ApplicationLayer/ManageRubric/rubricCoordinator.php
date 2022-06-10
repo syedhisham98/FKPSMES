@@ -27,7 +27,6 @@ if(isset($_POST['addRubric'])){
   
 } 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -112,9 +111,9 @@ input {
     </td>
 
     <td>
-      <input type="button" onclick="window.location.href='editRubric.php';" value="Edit"/>
       <form action='' method='POST'>
       <input type="hidden" name="rubricID" value="<?=$row['rubricID']?>">
+      <input type="button" onclick="window.location.href='editRubric.php';" value="Edit"/>
       <input type="submit" name="delete" value="Delete">
       </form>
     </td>
