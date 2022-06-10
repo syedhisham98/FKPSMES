@@ -91,7 +91,6 @@ input {
     $no = 1;
     foreach($data as $row){
     echo "<tr>"?>
-    <td align="center"><?=$no?></td>
     <td align="center"><?=$row['rubricDesc']?></td>
     <td align="center"><?=$row['rubricWeight']?></td>
     <td align="center"><?=$row['rubricMark']?></td>
