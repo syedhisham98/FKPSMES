@@ -9,31 +9,32 @@
                 
             <ul>
                             <?php
-                                if ($_SESSION['usertype'] == 1 || $_SESSION['usertype'] == 2) { ?>
+                                if ($_SESSION['usertype'] == 1) { ?>
                                 <li><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
                                 <li class="dropdown"><a href="../../#">Menu</a>
                                    <div class="dropdown-content">
-                                        <a href="../../ApplicationLayer/ManageFood/foodHome.php">Food Service</a>
-                                        <a href="../../ApplicationLayer/ManageGood/goodHome.php">Good Service</a>
-                                        <a href="../../ApplicationLayer/ManageMedical/medicalHome.php">Medical Service</a>
-                                        <a href="../../ApplicationLayer/ManagePetAssist/petAsistHome.php">Pet Assist Service</a>
+                                        <a href="../../ApplicationLayer/ManageRubric/rubricStudent.php">Rubric</a>
+                                        <a href="../../ApplicationLayer/ManageProgressReport/ViewProgress.php">Progress and Report</a>
+                                        <a href="../../ApplicationLayer/ManageSchedule/stdSchedule.php">Schedule</a>
+                                        <a href="../../ApplicationLayer/ManageEvaluation/petAsistHome.php">Evaluation</a>
                                     </div>
                                 </li>
                                 <?php
                              } ?>
-                                <?php if ($_SESSION['usertype'] == 1) { ?>
-                                                           
-                                <li class="dropdown"><a href="#">Order</a>
-                                    
-                                        <div class="dropdown-content">
-                                        <a href="../../ApplicationLayer/ManagePayment/payment.php">Cart Page</a>
-                                        <a href="../../ApplicationLayer/ManagePayment/orderStatus.php">Order Status</a>
-                                        <a href="../../ApplicationLayer/ProvideTrackingandAnalytic/cust_track.php">Order Track</a>
-                                        </div>
-                                
+                
+                <?php
+                                if ($_SESSION['usertype'] == 2) { ?>
+                                <li><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
+                                <li class="dropdown"><a href="../../#">Menu</a>
+                                   <div class="dropdown-content">
+                                        <a href="../../ApplicationLayer/ManageRubric/foodHome.php">Rubric</a>
+                                        <a href="../../ApplicationLayer/ManageProgressReport/goodHome.php">Progress and Report</a>
+                                        <a href="../../ApplicationLayer/ManageSchedule/medicalHome.php">Schedule</a>
+                                        <a href="../../ApplicationLayer/ManageEvaluation/petAsistHome.php">Evaluation</a>
+                                    </div>
                                 </li>
-                            <?php 
-                        } ?>
+                                <?php
+                             } ?>
 
                     
                         
@@ -44,11 +45,6 @@
                         <nav class="main__menu__nav d-none d-lg-block">
                             <ul class="mainmenu">
                                 <li class="drop"><a href="../../ApplicationLayer/ManageUser/index.php">Home</a></li>
-                                <li class="drop"><a href="../../#">Order</a>
-                                    <ul class="dropdown-content">
-                                    <li><a href="../../ApplicationLayer/ProvideTrackingandAnalytic/orderlist.php">Order Delivery</a></li>
-                                </ul>
-                                </li>
                                     </ul>
                                 </li>                                    
                                 
