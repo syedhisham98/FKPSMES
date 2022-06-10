@@ -72,6 +72,7 @@ input {
       </div>
     </div>
 
+<center>
 <table>
 <tr>
 <th colspan="4"></th>
@@ -84,6 +85,7 @@ input {
     <p><button type="submit" formaction="../ManageRubric/addRubric.php">Add Rubric</button></p>
 </div>
 </th>
+
 
 <tbody>
 <table>
@@ -106,13 +108,12 @@ input {
     </td>
 
     <td>
+      <input type="button" onclick="window.location.href='editRubric.php';" value="Edit"/>
       <form action='' method='POST'>
       <input type="hidden" name="rubricID" value="<?=$row['rubricID']?>">
-      <td>
       <input type="submit" name="delete" value="Delete">
-      <input type="button" onclick="window.location.href='editRubric.php';" value="Edit"/>
+      </form>
     </td>
-    </form>
 
     </td>
     
@@ -130,7 +131,7 @@ input {
 
 </tr>
 </table>
-
+  </center>
 
 <?php
 include "../../includes/footer.php";

@@ -1,5 +1,9 @@
 <?php
+require_once '../../BusinessServiceLayer/Controller/rubricController.php';
+
 session_start();
+$rubric = new rubricController();
+$data = $rubric->viewRubric();
 
 if (!isset($_SESSION['username'])) {
   $message = "You must log in first";
@@ -8,6 +12,10 @@ if (!isset($_SESSION['username'])) {
   window.location = '../ManageUser/login.php';</script>";
 }
 
+if(isset($_POST['viewRubric'])){
+  $rubric->viewRubric();
+
+}
 
 ?>
 
@@ -58,6 +66,7 @@ input {
       </div>
     </div>
 
+<center>
 <table>
 <tr>
 <th colspan="4"></th>
@@ -77,14 +86,24 @@ input {
     <th>Weight</th>
   </tr>
 </table>
+<table>
+    <?php 
+    $no = 1;
+    foreach($data as $row){
+    echo "<tr>"?>
+    <td align="center"><?=$no?></td>
+    <td align="center"><?=$row['rubricDesc']?></td>
+    <td align="center"><?=$row['rubricWeight']?></td>
+    <td align="center"><?=$row['rubricMark']?></td>
+    </td>    
+    <?php
+    "</tr>";
+    $no++;
+  }
+  ?>
+  </table>
 
-</div>
-</th>
-
-
-</tr>
-</table>
-
+  </center>
 
 <?php
 include "../../includes/footer.php";
