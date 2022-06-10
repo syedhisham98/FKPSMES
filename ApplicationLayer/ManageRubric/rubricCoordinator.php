@@ -22,6 +22,11 @@ if(isset($_POST['deleteRubric'])){
   $rubric->deleteRubric();
 }
 
+if(isset($_POST['addRubric'])){
+  $rubric->addRubric();
+  
+} 
+
 
 ?>
 

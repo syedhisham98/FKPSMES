@@ -14,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 if(isset($_POST['addRubric'])){
-    //$rubric->addRubric();
+    $rubric->addRubric();
     
 } 
 
@@ -86,7 +86,7 @@ input {
   <input type="submit" name="addRubric" value="Add Rubric">
   <input type="button" onclick="window.location.href='rubricCoordinator.php';" value="Back" />
 </form>
-  </center>
+</center>
 
 <?php
 include "../../includes/footer.php";
