@@ -107,23 +107,17 @@ input {
 <?php 
     if ($_SESSION['usertype'] == 1){
       ?>
-      <p><button type="submit" formaction="../ManageProgressReport/ViewProgress.php">Progress and Report</button></p>
+      <p><button type="submit" formaction="../ManageProgressReport/ViewProgress.php">Progress</button></p>
+      <p><button type="submit" formaction="../ManageProgressReport/ViewReport.php">Report</button></p>
       
       <?php
-    }else if ($_SESSION['usertype'] == 2){
+    }else if ($_SESSION['usertype'] == 3){
       ?>
 
       <p><button type="submit" formaction="../ManageFood/providerFoodList.php">Progress and Report</button></p>
 
       <?php
-    }else if($_SESSION['usertype'] == 3){
-      ?>
-
-      <p><button type="submit" formaction="../ManageFood/foodHome.php">Progress and Report</button></p>
-
-  <?php
-    }
-  ?>
+    }?>
 
 </div>
 </th>
