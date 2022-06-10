@@ -118,7 +118,7 @@ input {
         </table>
     </tbody>
     <br>
-      <input type="button" onclick="window.location.href='AddNewProgress.php';" value="Add New Progress" /> 
+      
     </center>
 
 
