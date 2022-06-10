@@ -141,12 +141,12 @@ input {
 
 <th>
 <div class="homecard">
-  <img src="../../img/vet.jpg" alt="Pet vet" width = "350" height="300">
+  <img src="../../img/evaluation/evaluation.jpg" alt="Pet vet" width = "350" height="300">
   <div class="desc">
     <div class="vet">
     </div>
   </div>
-  <p><button type="submit" formaction="../ManagePetAssist/petAsistHome.php">Pet Assist Services</button></p>
+  <p><button type="submit" formaction="/FKPSMES/ApplicationLayer/ManageEvaluation/secretariat_view_student_mark.php">PSM Evaluation</button></p>
 </div>
 </form>
 </th>
