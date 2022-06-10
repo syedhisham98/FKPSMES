@@ -98,22 +98,27 @@ input {
 </th>
 
 <th>
-<div class="homecard">
+<?php 
+    if ($_SESSION['usertype'] == 1){
+      ?>
+      <div class="homecard">
   <img src="../../img/report.png" alt="Pet hotel" width = "350" height="300">
   <div class="desc">
     <div class="hotel">
   </div>
 </div>
-<?php 
-    if ($_SESSION['usertype'] == 1){
-      ?>
       <p><button type="submit" formaction="../ManageProgressReport/ViewProgress.php">Progress</button></p>
       
       
       <?php
     }else if ($_SESSION['usertype'] == 3){
       ?>
-
+<div class="homecard">
+  <img src="../../img/report.png" alt="Pet hotel" width = "350" height="300">
+  <div class="desc">
+    <div class="hotel">
+  </div>
+</div>
       <p><button type="submit" formaction="../ManageProgressReport/ViewReport.php">Report</button></p>
 
       <?php

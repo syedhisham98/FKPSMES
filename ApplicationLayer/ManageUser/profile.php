@@ -114,9 +114,6 @@ input {
 
 						</div>
 
-						
-
-						
 
 							<div class='row'>
 						<div class='col-25'>
@@ -150,8 +147,7 @@ input {
 		</center>
 
 		<center>
-				<input type="button" onclick="window.location.href='stdAddSchedule.php';" value="Add Schedule" /> 
-	  			<input type="button" onclick="window.location.href='stdSchedule.php';" value="Update Schedule" />
+				<input type="button" onclick="window.location.href='editProfile.php';" value="Edit Profile" /> 
 			</center>
 	</section>
 	<?php
