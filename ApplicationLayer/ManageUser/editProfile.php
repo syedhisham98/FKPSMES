@@ -87,23 +87,6 @@ input {
 					foreach($data as $row){
 						?>
 						<div class='form-row'>
-							<div class='name'>ID: </div>
-							<div class='value'>
-								<div class='input-group'>
-									<?php if ($usertype == 1) { ?>
-										<input type="text" name="student_id" value="<?=$row[''.$table_id.'id']?>" >
-										<?php
-									} else if ($usertype == 2) { ?>
-										<input type="text" name="lecturer_id" value="<?=$row[''.$table_id.'id']?>" >
-										<?php
-									} else if ($usertype == 3) { ?>
-										<input type="text" name="secretariat_id" value="<?=$row[''.$table_id.'id']?>" >
-										<?php
-									} ?>
-								</div>
-							</div>
-						</div>
-						<div class='form-row'>
 							<div class='name'>Name: </div>
 							<div class='value'>
 								<div class='input-group'>
